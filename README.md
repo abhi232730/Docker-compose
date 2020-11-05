@@ -9,3 +9,12 @@ Both containers should contain
 • Master’s Nginx webpage is served on port 8880 to the host machine.
 • Slave’s Nginx webpage is served on port 8881 to the host machine.
 To run everything use docker-compose up
+
+
+Test:
+
+Visit localhost:8880 and you should see “hello I’m master!”
+Visit localhost:8881 should not be possible!
+Running the command: docker pause keepalived_master
+Visit again localhost:8880 should not be possible!
+Visit again localhost:8881 and you should see “hello I’m backup!”
